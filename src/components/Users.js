@@ -5,7 +5,7 @@ class Users extends Component {
   render() {
     return (
       <div>
-          <p>There are {this.props.users.length} users!</p>
+          <p>There are {this.props.userCount} users!</p>
         <ul>
           {this.props.users.map( user => (<li>{user.username}</li>))}
           {/* Write code here that displays the usernames of all users in the Redux store */}
@@ -17,7 +17,7 @@ class Users extends Component {
 }
 
 //add mapStateToProps here
-const mapStateToProps = state => ({users: state.users})
+const mapStateToProps = state => ({users: state.users, userCount: state.users.length})
 
 // connect this component to Redux
 export default connect(mapStateToProps)(Users)
